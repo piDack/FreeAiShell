@@ -1,4 +1,2 @@
-from .cli import cli_app
-
-def main():
-    cli_app()
+#from .shell import aishell as _  # noqa
+from .shell import cli_app as cli_app

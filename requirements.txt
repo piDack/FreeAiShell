@@ -5,5 +5,7 @@ pypasser
 names
 colorama
 curl_cffi
+rich
 pydantic
+pyyaml
 typer[all]

@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./gpt4free"
+        "./gpt4free",
+        "./aishell"
     ]
 }

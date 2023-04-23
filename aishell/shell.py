@@ -3,8 +3,8 @@ import time
 from rich.console import Console
 import typer
 from typer import Typer
-from config import Config
-from backend_factory import QueryClientFactory
+from .config import Config
+from .backend_factory import QueryClientFactory
 
 cli_app = Typer()
 
@@ -12,7 +12,8 @@ cli_app = Typer()
 def aishell(question: str):
     config = Config.load()
     backend=config.backend
-    query_client=QueryClientFactory(backend)
+    query_client=QueryClientFactory(backend).create()
+    print(query_client)
     console = Console()
     with console.status(f'''
 [green] AiShell is thinking of `{question}` ...[/green]
@@ -27,10 +28,6 @@ def aishell(question: str):
     will_execute = typer.confirm('Execute this command?')
     if will_execute:
         os.system(response)
-
-@cli_app.command()
-def ais_connect_test():
-    pass
 
 import os
 def construct_prompt(query: str) -> str:
