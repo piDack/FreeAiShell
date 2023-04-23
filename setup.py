@@ -25,7 +25,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'aia=aishell.__main__:cli_app'
+            'ais=aishell.__main__:cli_app'
         ]
     }
 )
